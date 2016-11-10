@@ -1,5 +1,7 @@
 'use strict'
 
+const color = require('./color.js')
+
 const fps = 30;
 
 const board = document.getElementById('board')
@@ -8,12 +10,8 @@ const ctx = board.getContext('2d')
 const tileWidth = board.width / 10
 const tileHeight = tileWidth
 
-const fromRGB = function(r, g, b) {
-    return "rgb(" + r + "," + g + "," + b + ")"
-}
-
 const drawTile = function(top, left) {
-    this.fillStyle = fromRGB(200, 0, 0)
+    this.fillStyle = color.fromRGB(200, 0, 0)
     this.fillRect(top + 1, left + 1, tileWidth - 2, tileHeight - 2)
 }
 
